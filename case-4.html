@@ -40,6 +40,48 @@
   <h3>Ma thèse</h3>
   <p>Sans les chiffres internes je ne peux pas trancher sur les drivers exacts. Mais voilà comment j'attaquerais : <strong>segmenter d'abord, traiter le churn évitable, construire des barrières à la sortie</strong>.</p>
 
+  <figure class="diagram">
+    <span class="diagram-caption">Fig. 1 — Timeline du contrat assurance auto</span>
+    <svg viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline interventions sur le contrat">
+      <line class="d-line" x1="60" y1="140" x2="760" y2="140" stroke-width="2"/>
+
+      <circle class="d-marker" cx="80" cy="140" r="5"/>
+      <circle class="d-marker" cx="240" cy="140" r="5"/>
+      <circle class="d-marker" cx="400" cy="140" r="5"/>
+      <circle class="d-marker" cx="640" cy="140" r="5"/>
+      <circle class="d-marker" cx="740" cy="140" r="5"/>
+
+      <text class="d-axis-label" x="80" y="165" text-anchor="middle">J0</text>
+      <text class="d-sub" x="80" y="186" text-anchor="middle">Souscription</text>
+
+      <text class="d-axis-label" x="240" y="165" text-anchor="middle">J+90</text>
+      <text class="d-sub" x="240" y="186" text-anchor="middle">NPS final</text>
+
+      <text class="d-axis-label" x="400" y="165" text-anchor="middle">J+180</text>
+      <text class="d-sub" x="400" y="186" text-anchor="middle">Mi-contrat</text>
+
+      <text class="d-axis-label" x="640" y="165" text-anchor="middle">J-60 av. éch.</text>
+      <text class="d-sub" x="640" y="186" text-anchor="middle">Pré-renouv.</text>
+
+      <text class="d-axis-label" x="740" y="165" text-anchor="middle">J+365</text>
+      <text class="d-sub" x="740" y="186" text-anchor="middle">Échéance Hamon</text>
+
+      <rect class="d-box" x="80" y="35" width="160" height="50" rx="4"/>
+      <text class="d-title" x="160" y="58" text-anchor="middle">ONBOARDING 90J</text>
+      <text class="d-sub" x="160" y="76" text-anchor="middle">NPS J30/J60/J90</text>
+      <line class="d-line" x1="80" y1="85" x2="80" y2="135" stroke-dasharray="3 3"/>
+      <line class="d-line" x1="240" y1="85" x2="240" y2="135" stroke-dasharray="3 3"/>
+
+      <rect class="d-box" x="300" y="35" width="200" height="40" rx="4"/>
+      <text class="d-title" x="400" y="60" text-anchor="middle">CROSS-SELL HABITATION</text>
+      <line class="d-line" x1="400" y1="75" x2="400" y2="135" stroke-dasharray="3 3"/>
+
+      <rect class="d-box" x="540" y="35" width="200" height="40" rx="4"/>
+      <text class="d-title" x="640" y="60" text-anchor="middle">CONTACT PRÉ-RENOUV.</text>
+      <line class="d-line" x1="640" y1="75" x2="640" y2="135" stroke-dasharray="3 3"/>
+    </svg>
+  </figure>
+
   <h3>Les leviers</h3>
 
   <div class="card has-mark" style="--mark: #0E5C3F">
@@ -68,6 +110,17 @@
       <li>Les déçus identifiés sont traités au cas par cas</li>
     </ul>
   </div>
+
+  <section class="ia-section">
+    <h3>L'IA dans ce contexte</h3>
+    <p class="ia-intro">L'IA est utile pour les couches autour de la création (sourcing, analyse, distribution), pas pour la création elle-même. Voici où je l'utiliserais ici.</p>
+    <ul>
+      <li>Analyse de cohorte automatisée via Claude Code sur les exports HubSpot — drivers de churn par segment, sans data team mobilisée.</li>
+      <li>NPS scoring automatisé sur les verbatims clients pour repérer les déçus tôt.</li>
+      <li>Segmentation auto vs habitation pour identifier les profils cross-sell les plus probables.</li>
+      <li>Les actions de rétention (geste commercial, escalade SAV) restent humaines — l'IA fait le diagnostic, l'humain agit.</li>
+    </ul>
+  </section>
 
   <div class="kpi-block">
     <h4>KPIs de pilotage</h4>
