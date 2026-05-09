@@ -27,7 +27,7 @@ body {
   color: var(--text);
   font-family: system-ui, -apple-system, "Inter", "Segoe UI", Roboto, sans-serif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.55;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -43,23 +43,23 @@ h1, h2, h3, h4 {
 
 h1 { font-size: 38px; }
 h2 { font-size: 30px; }
-h3 { font-size: 24px; color: var(--primary); margin-top: 3rem; }
-h4 { font-size: 20px; color: var(--primary); margin-top: 2.5rem; }
+h3 { font-size: 24px; color: var(--primary); margin-top: 2.5rem; }
+h4 { font-size: 20px; color: var(--primary); margin-top: 2rem; }
 
-p { margin: 0 0 1.5rem; }
+p { margin: 0 0 1rem; }
 
 a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
 a:hover { color: var(--primary-hover); }
 
 strong { color: var(--primary); font-weight: 700; }
 
-ul, ol { margin: 0 0 1.5rem; padding-left: 1.25rem; }
-li { margin-bottom: 0.6rem; }
+ul, ol { margin: 0 0 1rem; padding-left: 1.25rem; }
+li { margin-bottom: 0.4rem; }
 li::marker { color: var(--primary); }
 
 blockquote {
-  margin: 0 0 2rem;
-  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 0 0 1.25rem;
+  padding: 0.4rem 0 0.4rem 1.25rem;
   border-left: 3px solid var(--primary);
   color: var(--muted);
   font-style: italic;
@@ -134,7 +134,7 @@ blockquote {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--green-apple);
+  color: var(--yellow-lightning);
   margin-bottom: 1rem;
 }
 .tldr-block h2 {
@@ -333,8 +333,8 @@ nav.sticky {
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--primary);
-  margin: 3.5rem 0 1rem;
-  padding-top: 3rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border);
 }
 .label.has-mark::before {
@@ -377,6 +377,70 @@ h3 + .label {
 .kpi-block ul { margin-bottom: 0; }
 .kpi-block li::marker { color: var(--green-forest); }
 .kpi-block strong { color: var(--green-forest); }
+
+/* Structural diagram (one per case page) */
+.diagram {
+  margin: 2rem 0 2.5rem;
+  padding: 1.5rem 1.25rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.diagram-caption {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.diagram svg .d-box { fill: #fff; stroke: var(--primary); stroke-width: 1.5; }
+.diagram svg .d-line { stroke: var(--primary); stroke-width: 1.5; fill: none; }
+.diagram svg .d-arrow { fill: var(--primary); }
+.diagram svg .d-title {
+  font: 600 15px system-ui, sans-serif;
+  fill: var(--primary);
+  letter-spacing: 0.04em;
+}
+.diagram svg .d-sub {
+  font: 13px system-ui, sans-serif;
+  fill: var(--muted);
+}
+.diagram svg .d-axis-label {
+  font: 600 13px system-ui, sans-serif;
+  fill: var(--primary);
+  letter-spacing: 0.04em;
+}
+.diagram svg .d-marker { fill: var(--primary); }
+
+/* L'IA dans ce contexte block */
+.ia-section {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--primary);
+  border-radius: 4px;
+  padding: 1.75rem 2rem;
+  margin: 3rem 0 2rem;
+}
+.ia-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+  font-size: 22px;
+}
+.ia-section .ia-intro {
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.ia-section ul { margin-bottom: 0; }
+.ia-section li { margin-bottom: 0.5rem; }
 
 /* Page nav (prev / next) */
 .page-nav {
@@ -457,8 +521,13 @@ h3 + .label {
   .case-body { padding: 0.5rem 1.25rem 1rem; }
 
   .card { padding: 1.5rem 1.25rem; margin-bottom: 1.5rem; }
-  .label { font-size: 15px; margin-top: 2.5rem; padding-top: 2rem; }
+  .label { font-size: 15px; margin-top: 2rem; padding-top: 1.5rem; }
   li { font-size: 15px; }
+
+  .diagram { padding: 1rem 0.5rem 0.5rem; margin: 1.5rem 0 2rem; }
+
+  .ia-section { padding: 1.5rem 1.25rem; margin: 2.5rem 0 1.5rem; }
+  .ia-section h3 { font-size: 19px; }
 
   .page-nav {
     grid-template-columns: 1fr;
@@ -473,10 +542,11 @@ h3 + .label {
 @media print {
   nav.sticky, .page-nav, .deco { display: none; }
   body { background: #fff; }
-  .case-header, .case-body, .card, .kpi-block, .tldr-block, .cover-hero, .case-card {
+  .case-header, .case-body, .card, .kpi-block, .tldr-block, .cover-hero, .case-card, .diagram, .ia-section {
     box-shadow: none;
     background: #fff;
   }
+  .diagram, .ia-section { page-break-inside: avoid; }
   .tldr-block { color: var(--text); border: 1px solid var(--border); }
   .tldr-block h2, .tldr-block p { color: var(--text); }
   .tldr-block .tldr-eyebrow { color: var(--green-forest); }
