@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Case 4 · Réduire le churn — Ornikar Head of Growth</title>
+<meta name="description" content="Case 4 — Réduire le churn assurance auto." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="sticky" aria-label="Navigation des cases">
+  <div class="nav-inner">
+    <a href="index.html">Cover</a>
+    <a href="case-1.html">01 · Partenariats</a>
+    <a href="case-2.html">02 · Organique → paid</a>
+    <a href="case-3.html">03 · Parents</a>
+    <a href="case-4.html" class="active">04 · Churn</a>
+  </div>
+</nav>
+
+<header class="case-header">
+  <span class="pill">Case 4</span>
+  <h1>Réduire le churn assurance auto</h1>
+  <p class="lede-quote">Marché structurellement défavorable à la rétention. La refonte produit règlera une partie — le reste se traite comme un sujet growth.</p>
+</header>
+
+<main class="case-body">
+
+  <h3>Le problème</h3>
+  <p>Marché structurellement défavorable à la rétention :</p>
+  <ul>
+    <li>Loi Hamon (résiliation à tout moment après 1 an, sans frais)</li>
+    <li>Hausse des primes (<span class="hl">+7,5 % en 2025</span>, qui continue en 2026)</li>
+    <li>Acquisition via comparateurs</li>
+    <li>30 % de jeunes conducteurs avec des primes 700–800 € — segment le plus enclin à churner après 1 an</li>
+  </ul>
+  <p>Le produit est en refonte. Mon angle : <strong>la refonte règlera une partie, mais le churn doit être attaqué comme un sujet growth en parallèle</strong>.</p>
+
+  <h3>Ma thèse</h3>
+  <p>Sans les chiffres internes je ne peux pas trancher sur les drivers exacts. Mais voilà comment j'attaquerais : <strong>segmenter d'abord, traiter le churn évitable, construire des barrières à la sortie</strong>.</p>
+
+  <h3>Les leviers</h3>
+
+  <div class="card has-mark" style="--mark: #0E5C3F">
+    <h4>1. Segmenter le churn avant de chercher des solutions</h4>
+    <p>Distinguer volontaire (le client choisit de partir) vs involontaire (CB expirée, échec paiement) — <span class="hl">l'involontaire représente 20–40 % du churn total</span> selon les secteurs et c'est le quick win classique via relances automatisées.</p>
+    <p>Puis segmenter par cohorte : jeunes vs standards, post-sinistre vs sans sinistre, moment du churn (M3, M6, M12, M18).</p>
+  </div>
+
+  <div class="card has-mark" style="--mark: #EFD346">
+    <h4>2. Anticiper le renouvellement</h4>
+    <p>Contact proactif <span class="hl">60 jours avant échéance</span> avec une offre de loyauté (geste commercial, garantie supplémentaire), plutôt que de subir la résiliation Hamon. Mécanique simple à industrialiser via Braze qui est déjà dans la stack (sans doute déjà fait).</p>
+  </div>
+
+  <div class="card has-mark" style="--mark: #0E5C3F">
+    <h4>3. Cross-sell habitation comme barrière à la sortie<span class="badge-new">Nouveau</span></h4>
+    <p>L'habitation est en place depuis septembre 2024 (d'abord partenariat Acheel) et encore étiquetée « NOUVEAU » sur le site en mai 2026 — donc en phase de structuration commerciale.</p>
+    <p>Coupler auto + habitation crée une <strong>friction réelle à la résiliation</strong>, et un client multi-produit a une LTV mécaniquement supérieure. Levier à industrialiser, avec un objectif chiffré sur le taux de cross-sell.</p>
+  </div>
+
+  <div class="card has-mark" style="--mark: #EFD346">
+    <h4>4. Onboarding 90 jours</h4>
+    <p>Fenêtre critique pour la rétention long terme. Mécanique CRM dédiée :</p>
+    <ul>
+      <li>Tutos d'usage, rappels d'avantages</li>
+      <li>NPS proactif à <strong>J30 / J60 / J90</strong> pour repérer les déçus avant qu'ils partent silencieusement</li>
+      <li>Les déçus identifiés sont traités au cas par cas</li>
+    </ul>
+  </div>
+
+  <div class="kpi-block">
+    <h4>KPIs de pilotage</h4>
+    <ul>
+      <li>Churn rate annuel par cohorte (jeunes / standards) et par moment (M3, M6, M12, M18)</li>
+      <li>Part du churn involontaire (cible &lt;5 % après industrialisation)</li>
+      <li>Taux de cross-sell auto → habitation</li>
+      <li>NPS à J30 / J60 / J90</li>
+      <li>LTV mono-produit vs multi-produit</li>
+    </ul>
+  </div>
+</main>
+
+<nav class="page-nav" aria-label="Navigation entre cases">
+  <a href="case-3.html" class="prev">
+    <span class="arrow">←</span>
+    <span>
+      <span class="label-row">Case précédent</span>
+      <span class="title-row">03 · Parler aux parents</span>
+    </span>
+  </a>
+  <a href="index.html" class="next">
+    <span>
+      <span class="label-row">Retour</span>
+      <span class="title-row">Cover</span>
+    </span>
+    <span class="arrow">→</span>
+  </a>
+</nav>
+
+</body>
+</html>
