@@ -130,12 +130,12 @@ blockquote {
 }
 .tldr-block .tldr-eyebrow {
   display: block;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--yellow-lightning);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 .tldr-block h2 {
   color: #fff;
