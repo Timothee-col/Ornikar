@@ -68,7 +68,7 @@ blockquote {
 /* ---------- Cover hero ---------- */
 .cover-hero {
   position: relative;
-  padding: 5rem 1.5rem 4rem;
+  padding: 2.5rem 1.5rem 2.5rem;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
@@ -125,7 +125,7 @@ blockquote {
   color: #fff;
   border-radius: 4px;
   padding: 2.5rem 2.25rem;
-  margin: 4rem auto;
+  margin: 2.5rem auto 4rem;
   max-width: 760px;
 }
 .tldr-block .tldr-eyebrow {
