@@ -43,7 +43,7 @@
     letter-spacing: -0.01em;
   }
 
-  h1 { font-size: 48px; }
+  h1 { font-size: 38px; }
   h2 { font-size: 38px; }
   h3 { font-size: 28px; color: var(--primary); margin-top: 3rem; }
   h4 { font-size: 24px; color: var(--primary); margin-top: 2.5rem; }
@@ -79,7 +79,7 @@
 
   /* ---------- Hero ---------- */
   .hero {
-    padding: 7rem 1.5rem 5rem;
+    padding: 4rem 1.5rem 3rem;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
   }
@@ -93,25 +93,25 @@
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: var(--primary);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
   .hero h1 {
     color: var(--primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .hero-subtitle {
-    font-size: 22px;
+    font-size: 20px;
     color: var(--muted);
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.75rem;
     line-height: 1.4;
   }
   .hero-author {
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.05em;
     color: var(--muted);
     text-transform: uppercase;
     border-top: 1px solid var(--border);
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
   }
 
   /* ---------- Sticky nav ---------- */
@@ -131,6 +131,7 @@
     display: flex;
     gap: 2rem;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
   .nav-inner::-webkit-scrollbar { display: none; }
@@ -152,12 +153,15 @@
   }
 
   /* ---------- Cases ---------- */
-  main { padding: 0 1.5rem; }
+  main {
+    padding: 0 1.5rem;
+    padding-bottom: 6rem;
+  }
 
   .case {
     max-width: 760px;
     margin: 0 auto;
-    padding: 6rem 0 2rem;
+    padding: 4rem 0 2rem;
     scroll-margin-top: 80px;
   }
 
@@ -230,65 +234,56 @@
 
   .label {
     display: block;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    color: var(--primary);
-    margin: 2.5rem 0 0.75rem;
-  }
-
-  /* ---------- Footer ---------- */
-  footer {
-    margin-top: 8rem;
-    padding: 3rem 1.5rem 4rem;
-    background: var(--bg-alt);
-    border-top: 1px solid var(--border);
-  }
-  .footer-inner {
-    max-width: 760px;
-    margin: 0 auto;
-    font-size: 14px;
-    color: var(--muted);
-  }
-  .footer-inner strong {
-    display: block;
-    color: var(--text);
     font-size: 16px;
-    margin-bottom: 0.5rem;
-  }
-  .footer-inner a { color: var(--primary); }
-  .footer-meta {
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--primary);
+    margin: 3.5rem 0 1rem;
+    padding-top: 3rem;
     border-top: 1px solid var(--border);
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  }
+  h3 + .label {
+    margin-top: 1.5rem;
+    padding-top: 0;
+    border-top: none;
   }
 
   /* ---------- Mobile ---------- */
   @media (max-width: 720px) {
-    h1 { font-size: 36px; }
-    h2 { font-size: 28px; }
+    h1 { font-size: 30px; }
+    h2 { font-size: 26px; }
     h3 { font-size: 22px; }
     h4 { font-size: 19px; }
-    .hero { padding: 4rem 1.25rem 3rem; }
-    .hero-subtitle { font-size: 18px; }
-    .case { padding: 4rem 0 1rem; }
+    .hero { padding: 2.5rem 1.25rem 2rem; }
+    .hero-subtitle { font-size: 17px; }
+    .case { padding: 3rem 0 1rem; }
     .case-lede { font-size: 17px; }
-    .card { padding: 1.5rem 1.25rem; }
-    hr { margin: 4rem auto; }
+    .card { padding: 1.5rem 1.25rem; margin-bottom: 1.5rem; }
+    .label { font-size: 15px; margin-top: 2.5rem; padding-top: 2rem; }
+    li { font-size: 15px; }
+    hr { margin: 3.5rem auto; }
+    .nav-inner { gap: 1.5rem; padding: 0 1.25rem; }
+    /* Soft fade on the right edge to hint scrollability */
+    nav.sticky::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 32px;
+      background: linear-gradient(to right, rgba(247, 244, 238, 0), rgba(247, 244, 238, 0.94));
+      pointer-events: none;
+    }
+    main { padding-bottom: 4rem; }
   }
 
   /* ---------- Print ---------- */
   @media print {
-    nav.sticky, footer { display: none; }
+    nav.sticky { display: none; }
     body { background: #fff; }
     .hero, .case, .card, .kpi-block { box-shadow: none; background: #fff; }
     .case { padding: 2rem 0; page-break-inside: avoid; }
     a { color: var(--text); text-decoration: none; }
     h1, h2, h3, h4 { page-break-after: avoid; }
+    main { padding-bottom: 0; }
   }
 </style>
 </head>
@@ -379,7 +374,7 @@
       <li>En dernier recours : cold outreach ciblé avec un angle business clair, pas un pitch produit.</li>
     </ul>
 
-    <p><strong>L’upside potentiel :</strong> si l’hypothèse tient et qu’on intègre dans leur tunnel post-achat, même à 1 % de conversion, ça fait 500 polices/an, soit <strong>~300 k€ de CA additionnel/an</strong> à un CAC structurellement inférieur aux comparateurs. À 3 %, on est sur <strong>~1 M€</strong>.</p>
+    <p>L’upside potentiel : si l’hypothèse tient et qu’on intègre dans leur tunnel post-achat, même à 1 % de conversion, ça fait 500 polices/an, soit ~300 k€ de CA additionnel/an à un CAC structurellement inférieur aux comparateurs. À 3 %, on est sur <strong>~1 M€</strong>.</p>
 
     <div class="kpi-block">
       <h4>KPIs de pilotage</h4>
@@ -400,19 +395,19 @@
     <p class="case-lede">Un winner format viral non squeezé, un compte officiel en chute libre, et zéro pont entre l’organique et le paid. À industrialiser.</p>
 
     <h3>Le problème</h3>
-    <p>Sur TikTok, Ornikar a cartonné dans le passé (<strong>4,7 M de vues sur le quizz Cassandra</strong> en juillet 2025). Aujourd’hui les vidéos officielles font 200–3 500 vues. Le winner format n’a pas été squeezé pendant qu’il marchait, et le compte est <strong>trop dépendant d’une personne</strong>.</p>
+    <p>Sur TikTok, Ornikar a cartonné dans le passé (<strong>4,7 M de vues sur le quizz Cassandra</strong> en juillet 2025). Aujourd’hui les vidéos officielles font 200–3 500 vues. Le winner format n’a pas été squeezé pendant qu’il marchait, et le compte est trop dépendant d’une personne.</p>
     <p>Pendant ce temps, un écosystème UGC tourne tout seul autour de la marque : des moniteurs indépendants comme « Un Moniteur Cool » font 10k+ likes en parlant d’Ornikar de l’extérieur, et plusieurs créatrices font des vidéos sponsorisées qui performent mieux que le compte officiel.</p>
     <p>Côté paid, 4 ads B2C actives, zéro vidéo côté supply enseignants. Et <strong>aucun pont entre ce qui marche en organique et ce qui est testé en ads</strong>.</p>
 
     <h3>Ma thèse</h3>
     <blockquote>L’organique est la R&amp;D créative du paid.</blockquote>
-    <p>Deux leviers indépendants à activer en parallèle pour scaler ça : une <strong>content farm multi-comptes</strong> et un <strong>réseau de creators</strong> recrutés parmi les moniteurs et les élèves Ornikar.</p>
+    <p>Deux leviers indépendants à activer en parallèle pour scaler ça : une content farm multi-comptes et un réseau de creators recrutés parmi les moniteurs et les élèves Ornikar.</p>
 
     <h3>Les leviers de production</h3>
 
     <div class="card">
       <h4>1. Content farm multi-comptes</h4>
-      <p>Sous-traitée à une agence spécialisée. 5–10 comptes dédiés (genre <em>@ornikar.code</em>, <em>@permis.facile</em>), <strong>chauffés correctement</strong> pour ne pas être flagués, qui posent le même contenu en variations légères.</p>
+      <p>Sous-traitée à une agence spécialisée. 5–10 comptes dédiés (genre <em>@ornikar.code</em>, <em>@permis.facile</em>), chauffés correctement pour ne pas être flagués, qui posent le même contenu en variations légères.</p>
       <p>Logique : si une variation perce, elle peut faire 1 M+ vues sans dépendre du compte officiel. <strong>Diversification du risque créatif.</strong> À sous-traiter parce que le warming des comptes et la volumétrie sont un métier en soi.</p>
     </div>
 
@@ -441,13 +436,13 @@
     <p>Donner aux creators la référence + contraintes clés + logique d’angle. <strong>Chacun interprète dans sa voix.</strong></p>
 
     <span class="label">5. Deux types de formats en parallèle</span>
-    <p>Le <strong>format viral</strong> fait des vues mais convertit peu. Le <strong>format desire</strong> (témoignages, démo prix, comparatifs) convertit mais performe moins en organique. Faut les deux : du viral pour la portée, du desire pour la conversion.</p>
+    <p>Le format viral fait des vues mais convertit peu. Le format desire (témoignages, démo prix, comparatifs) convertit mais performe moins en organique. <strong>Faut les deux : du viral pour la portée, du desire pour la conversion.</strong></p>
 
     <span class="label">6. Le format se détache du visage</span>
     <p>Quand un format performe avec un creator qui n’avait jamais fait 100k vues, c’est qu’il est <strong>scalable indépendamment de la personne</strong>.</p>
 
     <h3>Boucler organique → paid</h3>
-    <p>Quand une vidéo organique cartonne (&gt;100k vues), on la transforme en publicité diffusée depuis le compte du creator d’origine — <strong>Spark Ads</strong> côté TikTok, pour garder l’authenticité native. Et dans l’autre sens : ce qu’on apprend en pub (quels hooks accrochent, quels formats convertissent) sert à <strong>re-briefer la production organique</strong> pour qu’elle soit plus efficace.</p>
+    <p>Quand une vidéo organique cartonne (&gt;100k vues), on la transforme en publicité diffusée depuis le compte du creator d’origine — <strong>Spark Ads</strong> côté TikTok, pour garder l’authenticité native. Et dans l’autre sens : ce qu’on apprend en pub (quels hooks accrochent, quels formats convertissent) sert à re-briefer la production organique pour qu’elle soit plus efficace.</p>
 
     <div class="kpi-block">
       <h4>KPIs de pilotage</h4>
@@ -490,7 +485,7 @@
 
     <div class="card">
       <h4>2. Canal direct — Facebook, YouTube, comparateurs</h4>
-      <p>Les parents 40–55 sont sur <strong>Facebook</strong> (65 % des Gen X) et <strong>YouTube</strong>. Pas TikTok, pas Instagram comme leurs enfants.</p>
+      <p>Les parents 40–55 sont sur <strong>Facebook (65 % des Gen X) et YouTube</strong>. Pas TikTok, pas Instagram comme leurs enfants.</p>
       <p>À mettre en place :</p>
       <ul>
         <li><strong>Meta dédiée 35–55</strong> avec narratif différent : témoignages parents-enfants, comparatifs honnêtes, taux de réussite, casting mixte père/mère.</li>
@@ -501,7 +496,7 @@
 
     <div class="card">
       <h4>3. Pousser l’AAC comme produit « hero » parents</h4>
-      <p>Taux de réussite <strong>74 % vs 55 %</strong> filière classique. C’est le moment où la décision parentale est la plus engageante (parent supervise, signe, assure, paie). 30 % des candidats passent par l’AAC ⇒ on doit pouvoir <strong>monter à 35 %</strong>.</p>
+      <p>Taux de réussite <strong>74 % vs 55 %</strong> filière classique. C’est le moment où la décision parentale est la plus engageante (parent supervise, signe, assure, paie). 30 % des candidats passent par l’AAC ⇒ on doit pouvoir monter à 35 %.</p>
     </div>
 
     <div class="card">
@@ -546,7 +541,7 @@
 
     <div class="card">
       <h4>1. Segmenter le churn avant de chercher des solutions</h4>
-      <p>Distinguer <strong>volontaire</strong> (le client choisit de partir) vs <strong>involontaire</strong> (CB expirée, échec paiement) — l’involontaire représente 20–40 % du churn total selon les secteurs et c’est le quick win classique via relances automatisées.</p>
+      <p>Distinguer volontaire (le client choisit de partir) vs involontaire (CB expirée, échec paiement) — <strong>l’involontaire représente 20–40 % du churn total</strong> selon les secteurs et c’est le quick win classique via relances automatisées.</p>
       <p>Puis segmenter par cohorte : jeunes vs standards, post-sinistre vs sans sinistre, moment du churn (M3, M6, M12, M18).</p>
     </div>
 
@@ -585,38 +580,55 @@
 
 </main>
 
-<footer>
-  <div class="footer-inner">
-    <strong>Timothée</strong>
-    <div>Email · <a href="mailto:hello@example.com">hello@example.com</a></div>
-    <div>LinkedIn · <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/…</a></div>
-    <div class="footer-meta">Préparé pour Ornikar · Mai 2026</div>
-  </div>
-</footer>
-
 <script>
   (function () {
-    const links = document.querySelectorAll('nav.sticky a');
-    const sections = Array.from(links).map(l => document.querySelector(l.getAttribute('href')));
+    const nav = document.querySelector('nav.sticky');
+    const links = Array.from(document.querySelectorAll('nav.sticky a'));
+    const sections = links
+      .map(l => document.querySelector(l.getAttribute('href')))
+      .filter(Boolean);
+
+    if (!nav || !sections.length) return;
 
     function setActive(id) {
       links.forEach(a => {
-        const match = a.getAttribute('href') === '#' + id;
-        a.classList.toggle('active', match);
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
       });
     }
 
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-      if (visible[0]) setActive(visible[0].target.id);
-    }, {
-      rootMargin: '-40% 0px -50% 0px',
+    function updateActive() {
+      const navHeight = nav.offsetHeight;
+      const triggerLine = navHeight + 100;
+      let current = sections[0];
+      for (const section of sections) {
+        if (section.getBoundingClientRect().top - triggerLine <= 0) {
+          current = section;
+        }
+      }
+      setActive(current.id);
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateActive();
+        ticking = false;
+      });
+    }
+
+    // IntersectionObserver as a complementary trigger — fires on entry/exit
+    // and forces an immediate recompute, even between scroll frames.
+    const observer = new IntersectionObserver(() => updateActive(), {
+      rootMargin: '0px',
       threshold: [0, 0.25, 0.5, 0.75, 1]
     });
+    sections.forEach(s => observer.observe(s));
 
-    sections.forEach(s => s && observer.observe(s));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', updateActive);
+    updateActive();
 
     links.forEach(link => {
       link.addEventListener('click', e => {
