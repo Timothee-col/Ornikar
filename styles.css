@@ -325,12 +325,12 @@ nav.sticky {
   background: transparent;
   border: none;
   box-shadow: none;
-  padding: 1.5rem 0;
+  padding: 0;
   margin: 0;
   position: relative;
 }
 .card + .card {
-  border-top: 1px solid var(--border);
+  margin-top: 1.25rem;
 }
 .card h4 {
   margin-top: 0;
@@ -357,9 +357,7 @@ nav.sticky {
   font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--primary);
-  margin: 2.5rem 0 0.75rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
+  margin: 0.25rem 0 0.5rem;
 }
 .label.has-mark::before {
   content: '';
@@ -371,9 +369,7 @@ nav.sticky {
   border-radius: 2px;
 }
 h3 + .label {
-  margin-top: 1.5rem;
-  padding-top: 0;
-  border-top: none;
+  margin-top: 0.5rem;
 }
 
 /* Highlighter pen */
@@ -546,8 +542,9 @@ h3 + .label {
   .band { padding: 1.5rem 1.25rem; }
   .band-white { padding: 2rem 1.25rem; }
 
-  .card { padding: 1.25rem 0; }
-  .label { font-size: 15px; margin-top: 2rem; padding-top: 1.5rem; }
+  .card { padding: 0; }
+  .card + .card { margin-top: 1rem; }
+  .label { font-size: 15px; margin: 0.25rem 0 0.5rem; }
   li { font-size: 15px; }
 
   .diagram { padding: 1rem 0.5rem 0.5rem; margin: 1.5rem 0 2rem; }
@@ -579,7 +576,8 @@ h3 + .label {
   }
   .band-white { background: #fff !important; }
   .band { padding: 1.25rem 0; }
-  .diagram, .ia-section, .band { page-break-inside: avoid; }
+  .diagram, .ia-section, .band, .card, .label { page-break-inside: avoid; }
+  .label { page-break-after: avoid; }
   .tldr-block { color: var(--text); border: 1px solid var(--border); }
   .tldr-block h2, .tldr-block p { color: var(--text); }
   .tldr-block .tldr-eyebrow { color: var(--green-forest); }
