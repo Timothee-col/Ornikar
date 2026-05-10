@@ -107,6 +107,18 @@ blockquote {
   padding-top: 1.25rem;
   display: inline-block;
 }
+.cover-contact {
+  display: block;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+.cover-contact a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.cover-contact a:hover { color: var(--primary); text-decoration: underline; }
 
 /* Decorative SVGs around the hero */
 .deco {
