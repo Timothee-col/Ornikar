@@ -120,17 +120,6 @@ blockquote {
 }
 .cover-contact a:hover { color: var(--primary); text-decoration: underline; }
 
-/* Decorative road signs around the hero */
-.deco {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
-}
-.deco-stop  { top: 1.5rem;  right: 4%;   transform: rotate(-12deg); }
-.deco-speed { top: 1rem;    left: 5%;    transform: rotate(7deg); }
-.deco-arrow { bottom: 1rem; right: 6%;   transform: rotate(-6deg); }
-.deco-warn  { bottom: 1.25rem; left: 6%; transform: rotate(9deg); }
-
 /* ---------- TLDR Forest Green block ---------- */
 .tldr-block {
   background: var(--green-forest);
@@ -614,8 +603,6 @@ h3 + .label {
   .cover-hero { padding: 2.5rem 1.25rem 2rem; }
   .cover-hero h1 { font-size: 30px; }
   .cover-subtitle { font-size: 17px; }
-  /* Hero is too narrow on mobile to host the signs without overlap */
-  .deco { display: none; }
 
   .tldr-block { padding: 1.75rem 1.5rem; margin: 2.5rem 1rem; }
   .tldr-block h2 { font-size: 22px; }
@@ -661,7 +648,7 @@ h3 + .label {
 
 /* Print */
 @media print {
-  nav.sticky, .page-nav, .deco { display: none; }
+  nav.sticky, .page-nav { display: none; }
   body { background: #fff; }
   .case-header, .case-body, .card, .kpi-block, .tldr-block, .cover-hero, .case-card, .diagram, .ia-section {
     box-shadow: none;
