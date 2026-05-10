@@ -614,10 +614,8 @@ h3 + .label {
   .cover-hero { padding: 2.5rem 1.25rem 2rem; }
   .cover-hero h1 { font-size: 30px; }
   .cover-subtitle { font-size: 17px; }
-  /* Keep only 2 signs on mobile, smaller, opposite corners */
-  .deco-arrow, .deco-warn { display: none; }
-  .deco-stop  { width: 48px; height: 48px; top: 0.75rem; right: 0.75rem; }
-  .deco-speed { width: 44px; height: 44px; top: 0.75rem; left: 0.75rem; }
+  /* Hero is too narrow on mobile to host the signs without overlap */
+  .deco { display: none; }
 
   .tldr-block { padding: 1.75rem 1.5rem; margin: 2.5rem 1rem; }
   .tldr-block h2 { font-size: 22px; }
