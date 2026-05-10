@@ -120,16 +120,16 @@ blockquote {
 }
 .cover-contact a:hover { color: var(--primary); text-decoration: underline; }
 
-/* Decorative SVGs around the hero */
+/* Decorative road signs around the hero */
 .deco {
   position: absolute;
   pointer-events: none;
   z-index: 0;
 }
-.deco-1 { top: 2.5rem; right: 4rem; }
-.deco-2 { bottom: 1rem; right: 8%; }
-.deco-3 { top: 35%; right: 18%; }
-.deco-4 { top: 7rem; left: 6%; }
+.deco-stop  { top: 1.5rem;  right: 4%;   transform: rotate(-12deg); }
+.deco-speed { top: 1rem;    left: 5%;    transform: rotate(7deg); }
+.deco-arrow { bottom: 1rem; right: 6%;   transform: rotate(-6deg); }
+.deco-warn  { bottom: 1.25rem; left: 6%; transform: rotate(9deg); }
 
 /* ---------- TLDR Forest Green block ---------- */
 .tldr-block {
@@ -614,7 +614,10 @@ h3 + .label {
   .cover-hero { padding: 2.5rem 1.25rem 2rem; }
   .cover-hero h1 { font-size: 30px; }
   .cover-subtitle { font-size: 17px; }
-  .deco { display: none; }
+  /* Keep only 2 signs on mobile, smaller, opposite corners */
+  .deco-arrow, .deco-warn { display: none; }
+  .deco-stop  { width: 48px; height: 48px; top: 0.75rem; right: 0.75rem; }
+  .deco-speed { width: 44px; height: 44px; top: 0.75rem; left: 0.75rem; }
 
   .tldr-block { padding: 1.75rem 1.5rem; margin: 2.5rem 1rem; }
   .tldr-block h2 { font-size: 22px; }
