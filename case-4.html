@@ -7,7 +7,7 @@
 <meta name="description" content="Case 4 — Réduire le churn assurance auto." />
 <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="case-4">
 
 <nav class="sticky" aria-label="Navigation des cases">
   <div class="nav-inner">
@@ -22,7 +22,7 @@
 <header class="case-header">
   <span class="pill">Case 4</span>
   <h1>Réduire le churn assurance auto</h1>
-  <p class="lede-quote">Le marché est structurellement défavorable à la rétention : loi Hamon (résiliation à tout moment après 1 an, sans frais), hausse des primes (<span class="hl">+7,5 % en 2025</span>, qui continue en 2026), acquisition via comparateurs, 30 % de jeunes conducteurs avec des primes 700–800 € (segment le plus enclin à churner après 1 an).</p>
+  <p class="lede-quote">Le marché est structurellement défavorable à la rétention : loi Hamon (résiliation à tout moment après 1 an, sans frais), hausse des primes (<span class="hl">+7,5 %</span> en 2025, qui continue en 2026), acquisition via comparateurs, <span class="hl">30 %</span> de jeunes conducteurs avec des primes 700–800 € (segment le plus enclin à churner après 1 an).</p>
   <p class="lede-quote">Le produit est en refonte. Mon angle : la refonte règlera une partie, mais le churn doit être attaqué comme un sujet growth en parallèle.</p>
 </header>
 
@@ -81,14 +81,14 @@
     <div class="band-content">
       <h3>Les leviers</h3>
 
-      <div class="card has-mark" style="--mark: #0E5C3F">
+      <div class="card has-mark">
         <h4>1. Segmenter le churn avant de chercher des solutions</h4>
         <p>Avant de chercher comment retenir les clients, il faut comprendre pourquoi ils partent. La première distinction à faire :</p>
         <ul>
           <li>Ceux qui choisissent de partir (churn volontaire)</li>
           <li>Ceux qu'on perd à cause d'un problème technique : CB expirée, échec de paiement (churn involontaire)</li>
         </ul>
-        <p>Selon les secteurs, l'involontaire représente <span class="hl">20–40 % du total</span>. C'est le plus simple à régler, via des relances automatisées.</p>
+        <p>Selon les secteurs, l'involontaire représente 20–40 % du total. C'est le plus simple à régler, via des relances automatisées.</p>
         <p>Ensuite, segmenter par cohorte :</p>
         <ul>
           <li>Jeunes conducteurs vs standards</li>
@@ -98,9 +98,9 @@
         <p>Deux semaines de travail data, et on a les drivers principaux.</p>
       </div>
 
-      <div class="card has-mark" style="--mark: #EFD346">
+      <div class="card has-mark">
         <h4>2. Anticiper le renouvellement</h4>
-        <p>La loi Hamon laisse partir le client à tout moment. Plutôt que de subir, on contacte le client 60 jours avant l'échéance avec une offre de loyauté :</p>
+        <p class="callout callout-purple">La loi Hamon laisse partir le client à tout moment. Plutôt que de subir, on contacte le client 60 jours avant l'échéance avec une offre de loyauté :</p>
         <ul>
           <li>Geste commercial</li>
           <li>Garantie supplémentaire</li>
@@ -109,13 +109,13 @@
         <p>Mécanique simple à mettre en place via Braze, qui est déjà dans la stack — donc probablement déjà fait sous une forme ou une autre.</p>
       </div>
 
-      <div class="card has-mark" style="--mark: #0E5C3F">
+      <div class="card has-mark">
         <h4>3. Cross-sell habitation comme barrière à la sortie</h4>
         <p>L'habitation est en place depuis septembre 2024, avec Acheel comme partenaire à l'origine. Le produit est encore étiqueté « NOUVEAU » sur le site en mai 2026, donc encore en phase de structuration commerciale.</p>
         <p>L'idée : un client qui a auto + habitation chez Ornikar a beaucoup plus de friction à partir qu'un client mono-produit. Et sa LTV est plus élevée par construction. Levier à pousser, avec un objectif chiffré sur le taux de cross-sell.</p>
       </div>
 
-      <div class="card has-mark" style="--mark: #EFD346">
+      <div class="card has-mark">
         <h4>4. Onboarding 90 jours</h4>
         <p>Les 90 premiers jours sont la fenêtre où tout se joue pour la rétention long terme. Trois moments à instrumenter :</p>
         <ul>

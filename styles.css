@@ -46,7 +46,7 @@ h2 { font-size: 30px; }
 h3 { font-size: 24px; color: var(--primary); margin-top: 2rem; }
 h4 { font-size: 20px; color: var(--primary); margin-top: 2rem; }
 
-p { margin: 0 0 1rem; }
+p { margin: 0 0 0.75rem; }
 
 a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
 a:hover { color: var(--primary-hover); }
@@ -54,7 +54,7 @@ a:hover { color: var(--primary-hover); }
 strong { color: var(--primary); font-weight: 700; }
 
 ul, ol { margin: 0 0 1rem; padding-left: 1.25rem; }
-li { margin-bottom: 0.4rem; }
+li { margin-bottom: 0.4rem; line-height: 1.4; }
 li::marker { color: var(--primary); }
 
 blockquote {
@@ -292,6 +292,12 @@ nav.sticky {
   border-left: 5px solid var(--green-forest);
 }
 
+/* ---------- Per-case lever color ---------- */
+body.case-1 { --mark: var(--green-forest); --lever-fg: #fff; }
+body.case-2 { --mark: var(--yellow-lightning); --lever-fg: var(--primary); }
+body.case-3 { --mark: var(--blue-electric); --lever-fg: #fff; }
+body.case-4 { --mark: var(--yellow-sun); --lever-fg: var(--primary); }
+
 /* ---------- Case body ---------- */
 .case-body {
   max-width: none;
@@ -306,6 +312,7 @@ nav.sticky {
 .band-content {
   max-width: 760px;
   margin: 0 auto;
+  counter-reset: lever;
 }
 .band-beige { background: var(--bg); }
 .band-white {
@@ -317,8 +324,23 @@ nav.sticky {
 .band-content > .kpi-block {
   margin: 0;
 }
-.band-content > h3:first-child {
+.band-content > h3:first-child,
+.band-content > .ia-section > h3:first-child,
+.band-content > .kpi-block > h4:first-child {
   margin-top: 0;
+}
+
+/* Accent bar above each section heading */
+.band-content > h3:first-child::before,
+.band-content > .ia-section > h3:first-child::before,
+.band-content > .kpi-block > h4:first-child::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  background: var(--mark, var(--primary));
+  margin-bottom: 0.85rem;
+  border-radius: 2px;
 }
 
 .card {
@@ -330,7 +352,7 @@ nav.sticky {
   position: relative;
 }
 .card + .card {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
 }
 .card h4 {
   margin-top: 0;
@@ -338,14 +360,21 @@ nav.sticky {
   align-items: center;
   gap: 0.7rem;
 }
+.card.has-mark { counter-increment: lever; }
 .card.has-mark h4::before {
-  content: '';
-  display: inline-block;
-  width: 12px;
-  height: 12px;
+  content: counter(lever);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
   background: var(--mark, var(--primary));
+  color: var(--lever-fg, #fff);
+  font-size: 0.78em;
+  font-weight: 700;
+  border-radius: 50%;
   flex-shrink: 0;
-  border-radius: 2px;
+  line-height: 1;
 }
 .card p:last-child, .card ul:last-child { margin-bottom: 0; }
 
@@ -359,18 +388,43 @@ nav.sticky {
   color: var(--primary);
   margin: 0.25rem 0 0.5rem;
 }
+.label.has-mark { counter-increment: lever; }
 .label.has-mark::before {
-  content: '';
-  display: inline-block;
-  width: 11px;
-  height: 11px;
+  content: counter(lever);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
   background: var(--mark, var(--primary));
+  color: var(--lever-fg, #fff);
+  font-size: 0.78em;
+  font-weight: 700;
+  border-radius: 50%;
   flex-shrink: 0;
-  border-radius: 2px;
+  line-height: 1;
 }
 h3 + .label {
   margin-top: 0.5rem;
 }
+
+/* Colored callout box for memorable punchlines */
+.callout {
+  padding: 1.5rem 1.75rem;
+  margin: 1.25rem 0;
+  border-radius: 4px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+.callout-green {
+  background: var(--green-forest);
+  color: #fff;
+}
+.callout-purple {
+  background: var(--primary);
+  color: #fff;
+}
+.callout strong { color: #fff; }
 
 /* Highlighter pen */
 .hl {
@@ -380,23 +434,39 @@ h3 + .label {
   color: var(--text);
 }
 
-/* KPI block (Green Apple) */
+/* KPI block — beige 2 background, grid of cards */
 .kpi-block {
-  background: var(--green-apple);
+  background: var(--bg-alt);
   border-radius: 4px;
-  padding: 1.75rem 2rem;
-  margin-top: 3rem;
+  padding: 1.5rem 1.75rem;
+  margin-top: 0;
 }
 .kpi-block h4 {
   margin: 0 0 1rem;
   font-size: 14px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--green-forest);
+  color: var(--primary);
 }
-.kpi-block ul { margin-bottom: 0; }
-.kpi-block li::marker { color: var(--green-forest); }
-.kpi-block strong { color: var(--green-forest); }
+.kpi-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+}
+.kpi-block li {
+  background: #fff;
+  padding: 0.85rem 1rem;
+  border-radius: 4px;
+  margin: 0;
+  list-style: none;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+.kpi-block li::marker { content: ''; }
+.kpi-block strong { color: var(--primary); }
 
 /* Structural diagram (one per case page) */
 .diagram {
@@ -543,9 +613,12 @@ h3 + .label {
   .band-white { padding: 2rem 1.25rem; }
 
   .card { padding: 0; }
-  .card + .card { margin-top: 1rem; }
+  .card + .card { margin-top: 1.25rem; }
   .label { font-size: 15px; margin: 0.25rem 0 0.5rem; }
   li { font-size: 15px; }
+  .callout { padding: 1.25rem; }
+  .kpi-block { padding: 1.25rem; }
+  .kpi-block ul { grid-template-columns: 1fr; }
 
   .diagram { padding: 1rem 0.5rem 0.5rem; margin: 1.5rem 0 2rem; }
 
@@ -576,8 +649,13 @@ h3 + .label {
   }
   .band-white { background: #fff !important; }
   .band { padding: 1.25rem 0; }
-  .diagram, .ia-section, .band, .card, .label { page-break-inside: avoid; }
+  .diagram, .ia-section, .band, .card, .label, .callout, .kpi-block { page-break-inside: avoid; }
   .label { page-break-after: avoid; }
+  .callout {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .kpi-block li { border: 1px solid var(--border); }
   .tldr-block { color: var(--text); border: 1px solid var(--border); }
   .tldr-block h2, .tldr-block p { color: var(--text); }
   .tldr-block .tldr-eyebrow { color: var(--green-forest); }
