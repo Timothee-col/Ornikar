@@ -83,22 +83,47 @@
 
       <div class="card has-mark" style="--mark: #0E5C3F">
         <h4>1. Segmenter le churn avant de chercher des solutions</h4>
-        <p>Distinguer volontaire (le client choisit de partir) vs involontaire (CB expirée, échec paiement) — <span class="hl">l'involontaire représente 20–40 % du churn total</span> selon les secteurs et c'est le quick win classique via relances automatisées. Puis segmenter par cohorte : jeunes vs standards, post-sinistre vs sans sinistre, moment du churn (M3, M6, M12, M18).</p>
+        <p>Avant de chercher comment retenir les clients, il faut comprendre pourquoi ils partent. La première distinction à faire :</p>
+        <ul>
+          <li>Ceux qui choisissent de partir (churn volontaire)</li>
+          <li>Ceux qu'on perd à cause d'un problème technique : CB expirée, échec de paiement (churn involontaire)</li>
+        </ul>
+        <p>Selon les secteurs, <span class="hl">l'involontaire représente 20–40 % du total</span>. C'est le plus simple à régler, via des relances automatisées.</p>
+        <p>Ensuite, segmenter par cohorte :</p>
+        <ul>
+          <li>Jeunes conducteurs vs standards</li>
+          <li>Post-sinistre vs sans sinistre</li>
+          <li>Moment du départ : M3, M6, M12, M18</li>
+        </ul>
+        <p>Deux semaines de travail data, et on a les drivers principaux.</p>
       </div>
 
       <div class="card has-mark" style="--mark: #EFD346">
         <h4>2. Anticiper le renouvellement</h4>
-        <p>Contact proactif 60 jours avant échéance avec une offre de loyauté (geste commercial, garantie supplémentaire), plutôt que de subir la résiliation Hamon. Mécanique simple à industrialiser via Braze qui est déjà dans la stack (sans doute déjà fait).</p>
+        <p>La loi Hamon laisse partir le client à tout moment. Plutôt que de subir, on contacte le client 60 jours avant l'échéance avec une offre de loyauté :</p>
+        <ul>
+          <li>Geste commercial</li>
+          <li>Garantie supplémentaire</li>
+          <li>Ou simplement un check-in pour valider qu'il est satisfait</li>
+        </ul>
+        <p>Mécanique simple à mettre en place via Braze, qui est déjà dans la stack — donc probablement déjà fait sous une forme ou une autre.</p>
       </div>
 
       <div class="card has-mark" style="--mark: #0E5C3F">
         <h4>3. Cross-sell habitation comme barrière à la sortie</h4>
-        <p>L'habitation est en place depuis septembre 2024 (d'abord partenariat Acheel) et encore étiquetée « NOUVEAU » sur le site en mai 2026 — donc en phase de structuration commerciale. Coupler auto + habitation crée une friction réelle à la résiliation, et un client multi-produit a une LTV mécaniquement supérieure. Levier à industrialiser, avec un objectif chiffré sur le taux de cross-sell.</p>
+        <p>L'habitation est en place depuis septembre 2024, avec Acheel comme partenaire à l'origine. Le produit est encore étiqueté « NOUVEAU » sur le site en mai 2026, donc encore en phase de structuration commerciale.</p>
+        <p>L'idée : un client qui a auto + habitation chez Ornikar a beaucoup plus de friction à partir qu'un client mono-produit. Et sa LTV est plus élevée par construction. Levier à pousser, avec un objectif chiffré sur le taux de cross-sell.</p>
       </div>
 
       <div class="card has-mark" style="--mark: #EFD346">
         <h4>4. Onboarding 90 jours</h4>
-        <p>Fenêtre critique pour la rétention long terme. Mécanique CRM dédiée : tutos d'usage, rappels d'avantages, NPS proactif à J30 / J60 / J90 pour repérer les déçus avant qu'ils partent silencieusement. Les déçus identifiés sont traités au cas par cas.</p>
+        <p>Les 90 premiers jours sont la fenêtre où tout se joue pour la rétention long terme. Trois moments à instrumenter :</p>
+        <ul>
+          <li>J30 : NPS proactif</li>
+          <li>J60 : NPS proactif</li>
+          <li>J90 : NPS proactif</li>
+        </ul>
+        <p>Entre les deux, une mécanique CRM qui pousse des tutos d'usage et rappelle les avantages produit. Les déçus identifiés sont traités à la main : geste commercial, escalade SAV.</p>
       </div>
     </div>
   </section>
